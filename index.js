@@ -1,10 +1,10 @@
 import { Telegraf } from "telegraf";
 
-import { config } from "./config.js";
-
-import { markups } from "./markups.js";
+import { markups } from "./markups_ua.js";
 
 import { scenarios } from "./scenarios.js";
+
+import { texts } from "./texts_ua.js";
 
 import dotenv from 'dotenv';
 
@@ -20,8 +20,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN, {});
 // });
 
 bot.start((ctx, next) => {
-    ctx.reply("Ласкаво просимо до нашого бота\! \nТут Ви можете подати заявку для послуги переїзду\.", markups.startMenu);
-    console.log(ctx);
+    ctx.reply(texts.greeting(ctx), markups.startMenu);
     next();
 });
 
