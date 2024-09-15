@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-
+//vlad
 const bot = new Telegraf(process.env.BOT_TOKEN, {});
 
 // bot.on('new_chat_members', (ctx, next) => {
