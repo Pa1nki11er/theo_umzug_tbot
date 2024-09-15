@@ -34,7 +34,7 @@ bot.on('message', (ctx, next) => {
         scenarios.newApplication(ctx, chatId, bot);
     }
     if (ctx.message.text === "Контакти") {
-        scenarios.newApplication(ctx, chatId, bot);
+        scenarios.contacts(ctx, chatId, bot);
     }
     
     next();
