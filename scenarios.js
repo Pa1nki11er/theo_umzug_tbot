@@ -1,4 +1,4 @@
-import { markups } from "./markups_ua.js";
+import { markups } from "./templates/markups/markups_ua.js";
 const newApplication = (ctx, chatId, bot) => {
     bot.telegram.sendMessage(chatId, "Будь ласка оберіть послугу", markups.typeOfService);
 }

@@ -1,3 +1,5 @@
+import { message } from "telegraf/filters";
+
 const startMenu =
 {
     reply_markup: {
