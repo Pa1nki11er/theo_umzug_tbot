@@ -10,7 +10,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-//vlad
 const bot = new Telegraf(process.env.BOT_TOKEN, {});
 
 // bot.on('new_chat_members', (ctx, next) => {
@@ -36,9 +35,12 @@ bot.on('message', (ctx, next) => {
     if (ctx.message.text === "Контакти") {
         scenarios.contacts(ctx, chatId, bot);
     }
+    if (ctx.message.text === "❓") {
+        scenarios.qa(ctx, chatId, bot);
+    }
     
     next();
 });
-//denys
+
 bot.launch();
 

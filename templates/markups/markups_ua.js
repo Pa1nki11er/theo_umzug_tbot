@@ -52,7 +52,31 @@ const typeOfService = {
     }
 }
 
+const qaQuestions = {
+    reply_markup: {
+        keyboard:
+        [
+            [
+                {
+                    text: "Питання 1",
+                }
+            ],
+            [
+                {
+                    text: "Питання 3",
+                }
+            ],
+            [
+                {
+                    text: "Питання 3",
+                }
+            ]
+        ]
+    }
+}
+
 export const markups = {
     startMenu,
-    typeOfService
+    typeOfService,
+    qaQuestions
 }
