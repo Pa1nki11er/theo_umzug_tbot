@@ -4,7 +4,7 @@ import { markups } from "./templates/markups/markups_ua.js";
 
 import { scenarios } from "./scenarios.js";
 
-import { texts } from "./templates/texts/texts_ua.js";
+import { messages } from "./templates/texts/messages.js";
 
 import dotenv from 'dotenv';
 
@@ -19,8 +19,10 @@ const bot = new Telegraf(process.env.BOT_TOKEN, {});
 // });
 
 bot.start((ctx, next) => {
-    ctx.reply(texts.greeting(ctx), markups.startMenu);
-    console.log(markups.startMenu.reply_markup.keyboard[0][0].callback_data);
+    ctx.reply(messages.greeting(ctx),  {
+        reply_markup: markups.startMenu,
+        parse_mode: 'HTML'
+      });
     next();
 });
 
@@ -37,6 +39,12 @@ bot.on('message', (ctx, next) => {
     }
     if (ctx.message.text === "❓") {
         scenarios.qa(ctx, chatId, bot);
+    }
+    if (ctx.message.text === "Головне меню") {
+        scenarios.newApplication(ctx, chatId, bot);
+    }
+    if (ctx.message.text === "Ціни") {
+        scenarios.prices(ctx, chatId, bot);
     }
     
     next();

@@ -1,6 +1,8 @@
 import { markups } from "./templates/markups/markups_ua.js";
+import { messages } from "./templates/texts/messages.js";
+import { texts } from "./templates/texts/texts.js";
 const newApplication = (ctx, chatId, bot) => {
-    bot.telegram.sendMessage(chatId, "Дякую за те що ви обираєте TheoUmzug\!😊 \nБудь ласка оберіть послугу📝", markups.typeOfService);
+    bot.telegram.sendMessage(chatId, messages.selectService, markups.typeOfService);
 }
 
 const contacts = (ctx, chatId, bot) => {
@@ -9,9 +11,16 @@ const contacts = (ctx, chatId, bot) => {
 const qa = (ctx, chatId, bot) => {
     bot.telegram.sendMessage(chatId, "Оберіть будь ласка питання", markups.qaQuestions);
 }
+const mainMenu = (ctx, chatId, bot) => {
+    bot.telegram.sendMessage(chatId, "Оберіть будь ласка питання", markups.qaQuestions);
+}
+const prices = (ctx, chatId, bot) => {
+    bot.telegram.sendMessage(chatId, texts.prices);
+}
 
 export const scenarios = {
     newApplication,
     contacts,
-    qa
+    qa,
+    prices  
 }

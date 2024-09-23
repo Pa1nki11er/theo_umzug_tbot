@@ -1,32 +1,14 @@
 import { message } from "telegraf/filters";
 
-const startMenu =
-{
-    reply_markup: {
-        keyboard:
-        [
-            [
-                {
-                    text: "Подати заявку",
-                }
-            ],
-            [
-                {
-                    text: "Калькулятор",
-                }
-            ],
-            [
-                {
-                    text: "Контакти",
-                }
-            ],
-            [
-                {
-                    text: "❓",
-                }
-            ]
-        ]
-    }
+const startMenu = {
+    keyboard: [
+        [{ text: "Подати заявку" }],
+        [{ text: "Калькулятор" }],
+        [{ text: "Контакти" }],
+        [{ text: "Ціни" }],
+        [{ text: "❓" }]
+    ],
+    resize_keyboard: true 
 };
 
 const typeOfService = {
@@ -41,6 +23,11 @@ const typeOfService = {
             [
                 {
                     text: "Umzug Taxi",
+                }
+            ],
+            [
+                {
+                    text: "Головне меню"
                 }
             ],
             [
@@ -69,6 +56,11 @@ const qaQuestions = {
             [
                 {
                     text: "Питання 3",
+                }
+            ],
+            [
+                {
+                    text: "Головне меню"
                 }
             ]
         ]
