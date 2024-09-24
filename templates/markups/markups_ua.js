@@ -1,13 +1,16 @@
 import { message } from "telegraf/filters";
 
 const startMenu = {
-    keyboard: [
-        [{ text: "Подати заявку" }],
-        [{ text: "Калькулятор" }],
-        [{ text: "Контакти" }],
-        [{ text: "Ціни" }],
-        [{ text: "❓" }]
-    ],
+    reply_markup: {
+        keyboard: [
+            [{ text: "Подати заявку" }],
+            [{ text: "Калькулятор" }],
+            [{ text: "Контакти" }],
+            [{ text: "Ціни" }],
+            [{ text: "❓" }]
+        ]
+    },
+    parse_mode: 'HTML',
     resize_keyboard: true 
 };
 
