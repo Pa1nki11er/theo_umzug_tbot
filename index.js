@@ -37,12 +37,13 @@ bot.on('message', (ctx, next) => {
         "❓": () => scenarios.qa(ctx, chatId, bot),
         "Головне меню": () => scenarios.mainMenu(ctx, chatId, bot),
         "Ціни": () => scenarios.prices(ctx, chatId, bot),
-        "Umzughilfe": () => scenarios.prices(ctx, chatId, bot)
+        "Umzughilfe": () => scenarios.transportHelp(ctx, chatId, bot)
     };
 
     if (commandMap[text]) {
         commandMap[text]();
     }
+    console.log(ctx.message.location);
 
     next();
 });

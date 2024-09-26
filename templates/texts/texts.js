@@ -31,10 +31,18 @@ const selectService = "Дякую за те що ви обираєте TheoUmzug
 //using in scenarios.js
 const telNum = "Номери телефону підтримки: " + process.env.tel_number;
 
+const durationWarnning = "";
+
+const questionsWarning = "Будь ласка відповідайте на наступній питання, це потрібно щоб організувати замовлення";
+
+const locationFrom = "Будь ласка відправте локацію звідки потрібно забрати вантаж";
+
 export const texts = {
     greetingText,
     prices,
     selectService,
-    telNum
+    telNum,
+    questionsWarning,
+    locationFrom
 }
 

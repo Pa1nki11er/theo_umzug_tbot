@@ -29,8 +29,21 @@ const prices = (ctx, chatId, bot) => {
 }
 
 const transportHelp = (ctx, chatId, bot)=>{
-    bot.telegram.sendMessage(chatId, texts.prices);
+    console.log("meow0");
+    setTimeout(() => {
+        bot.telegram.sendMessage(chatId, texts.prices);
+    }, 100);
 
+    setTimeout(() => {
+        bot.telegram.sendMessage(chatId, texts.questionsWarning);
+    }, 200);
+
+    setTimeout(() => {
+        bot.telegram.sendMessage(chatId, texts.locationFrom, markups.locationFromReq);
+    }, 300);
+      
+    console.log("meow");
+    console.log("meow1");
 }
 
 export const scenarios = {

@@ -1,4 +1,5 @@
 import { message } from "telegraf/filters";
+import { keyboard } from "telegraf/markup";
 
 const startMenu = {
     reply_markup: {
@@ -13,6 +14,16 @@ const startMenu = {
     parse_mode: 'HTML',
     resize_keyboard: true 
 };
+
+const locationFromReq = {
+    reply_markup: {
+        keyboard: [
+            [{ text: "Відправити геолокацію", request_location: true }],
+            [{ text: "Головне меню" }],
+        ],
+        
+    }
+}
 
 const typeOfService = {
     reply_markup: {
@@ -73,5 +84,6 @@ const qaQuestions = {
 export const markups = {
     startMenu,
     typeOfService,
-    qaQuestions
+    qaQuestions, 
+    locationFromReq
 }
