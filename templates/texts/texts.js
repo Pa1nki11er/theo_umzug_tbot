@@ -66,9 +66,27 @@ const telNum = "Номери телефону підтримки: " + process.en
 
 const durationWarnning = "";
 
-const questionsWarning = "Будь ласка відповідайте на наступній питання, це потрібно щоб організувати замовлення";
+const questionsWarning = "Будь ласка відповідайте на наступні питання, це потрібно щоб організувати замовлення";
 
 const locationFrom = "Будь ласка відправте локацію звідки потрібно забрати вантаж";
+
+const locationTo = "Будь ласка відправте локацію куди потрібно відправити вантаж";
+
+const floorFrom = "Зазначте поверх із якого буде відправка";
+
+const floorTo = "Зазначте поверх на який потрібно занести вантаж";
+
+const roomCount = "Будь ласка відмітьте скільки кімнат у вашому домі?";
+
+const thingsToMove = `
+ Опишіть, будь ласка, всі габаритні предмети 
+ що потрібно перевезти, та кількість коробок. 
+ Зверніть увагу, якщо необхідно розібрати меблі 
+ для транспортування вкажіть це поряд із назвою.
+ На приклад: Шафа, Ліжко(Р)...
+ `;
+
+const probablyDateAndTime = "Будь ласка, відмітьте орієнтовну дату та час на яку ви плануєте переїзд"
 
 export const texts = {
     greetingText,
@@ -77,6 +95,12 @@ export const texts = {
     telNum,
     questionsWarning,
     locationFrom,
+    locationTo,
+    floorFrom,
+    floorTo,
+    roomCount,
+    thingsToMove,
+    probablyDateAndTime,
     transportSupport,
     transportTaxi, 
     descriptionWarning,
