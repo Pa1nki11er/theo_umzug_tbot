@@ -22,14 +22,31 @@ const qa = (ctx, chatId, bot) => {
 }
 const mainMenu = (ctx, chatId, bot) => {
     bot.telegram.sendMessage(chatId, "Головне меню", markups.startMenu);
-    console.log( markups.startMenu);
 }
 const prices = (ctx, chatId, bot) => {
     bot.telegram.sendMessage(chatId, texts.prices);
 }
 
+const artOfInvoice = (ctx, chatId, bot) => {
+    bot.telegram.sendMessage(chatId, texts.selectService, markups.artOfInvoiceMarkUp);
+}
+
+const independentApplication = (ctx, chatId, bot) => {
+    setTimeout(() => {
+        bot.telegram.sendMessage(chatId, texts.descriptionWarning);
+    }, 100);
+
+    setTimeout(() => {
+        bot.telegram.sendMessage(chatId, texts.transportSupport, markups.typeOfService);
+    }, 200);
+
+    setTimeout(() => {
+        bot.telegram.sendMessage(chatId, texts.transportTaxi, markups.typeOfService);
+    }, 300);
+    
+}
+
 const transportHelp = (ctx, chatId, bot)=>{
-    console.log("meow0");
     setTimeout(() => {
         bot.telegram.sendMessage(chatId, texts.prices);
     }, 100);
@@ -41,9 +58,6 @@ const transportHelp = (ctx, chatId, bot)=>{
     setTimeout(() => {
         bot.telegram.sendMessage(chatId, texts.locationFrom, markups.locationFromReq);
     }, 300);
-      
-    console.log("meow");
-    console.log("meow1");
 }
 
 export const scenarios = {
@@ -52,5 +66,7 @@ export const scenarios = {
     qa,
     prices,
     mainMenu,
-    transportHelp  
+    transportHelp,
+    artOfInvoice,
+    independentApplication
 }

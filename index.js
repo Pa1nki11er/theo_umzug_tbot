@@ -31,13 +31,14 @@ bot.on('message', (ctx, next) => {
     const text = ctx.message.text;
 
     const commandMap = {
-        "Подати заявку": () => scenarios.newApplication(ctx, chatId, bot),
+        "Подати заявку": () => scenarios.artOfInvoice(ctx, chatId, bot),
         "Калькулятор": () => scenarios.newApplication(ctx, chatId, bot),
         "Контакти": () => scenarios.contacts(ctx, chatId, bot),
         "❓": () => scenarios.qa(ctx, chatId, bot),
         "Головне меню": () => scenarios.mainMenu(ctx, chatId, bot),
         "Ціни": () => scenarios.prices(ctx, chatId, bot),
-        "Umzughilfe": () => scenarios.transportHelp(ctx, chatId, bot)
+        "Umzughilfe": () => scenarios.transportHelp(ctx, chatId, bot),
+        "Самойстійно": () => scenarios.independentApplication(ctx, chatId, bot)
     };
 
     if (commandMap[text]) {
